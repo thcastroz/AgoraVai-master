@@ -70,7 +70,7 @@ public class Main2Activity extends AppCompatActivity {
                 else
                 {
                     setResult(RESULT_OK, intent);
-                    intent.putExtra("returnedData", "Parametro Retornado com sucesso!");
+                    intent.putExtra("returnedData", "Parametro !");
                     finish();
                }
             }

@@ -47,19 +47,18 @@
                 android:layout_height="wrap_content"
                 android:text="Pesquisar"
                  />
+            <Button
+                android:id="@+id/btvoltar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voltar"
+                />
             </TableRow>
         </TableLayout>
         <ListView
             android:id="@+id/listadecliente"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <Button
-                android:id="@+id/btvoltar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Voltar" />
-        </ListView>
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
