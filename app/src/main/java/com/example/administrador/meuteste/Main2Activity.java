@@ -52,7 +52,7 @@ public class Main2Activity extends AppCompatActivity {
         btvoltar = (Button)findViewById(R.id.btvoltar);
         listaclientes = (ListView) findViewById(R.id.listadecliente);
         btpesq = (Button)findViewById(R.id.btpesq);
-
+//
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
