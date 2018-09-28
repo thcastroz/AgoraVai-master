@@ -5,17 +5,17 @@
     <item
         android:id="@+id/action_testesem"
         android:orderInCategory="100"
-        android:title="Teste Volta sem parametro"
+        android:title="Sem parametro"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_testecom"
         android:orderInCategory="100"
-        android:title="Teste Volta com parametro"
+        android:title="Com parametro"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_bd"
         android:orderInCategory="100"
-        android:title="Teste de BD"
+        android:title="Banco"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_sair"
