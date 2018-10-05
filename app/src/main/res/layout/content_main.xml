@@ -9,14 +9,14 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
-        android:layout_width="297dp"
+        android:layout_width="296dp"
         android:layout_height="52dp"
-        android:layout_marginBottom="256dp"
-        android:text="Deus te abençoe Hebert !"
+        android:layout_marginBottom="248dp"
+        android:text="Deus te abençoe Herbert !"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

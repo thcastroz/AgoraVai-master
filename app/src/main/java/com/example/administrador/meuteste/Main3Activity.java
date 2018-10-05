@@ -63,18 +63,18 @@ public class Main3Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                mprogressDialog = ProgressDialog.show(Main3Activity.this, "Aguarde", "Verificando Produto(s)...");
+                mprogressDialog = ProgressDialog.show(Main3Activity.this, "Aguarde", "Verificando...");
                 new Thread(new Runnable() {
-                    Handler handler = new Handler();
+                    Handler hand = new Handler();
                     List<Pessoa> listadepessoas = new ArrayList<Pessoa>();
                     String erro="";
                     public void run() {
                         try {
-                            handler.post(new Runnable() {
+                            hand.post(new Runnable() {
                                 public void run() {
                                     FeedReaderDbHelper mDbHelper = new FeedReaderDbHelper(getBaseContext());
                                     SQLiteDatabase db = mDbHelper.getWritableDatabase();
-                                    Cursor c = db.query("CLIENTES",new String[]{"COD_CLIENTE","NOME","CPFCGC"},null,null,null,null,"NOME");
+                                    Cursor c = db.query("CLIENTES",new String[]{"COD_CLIENTE","NOME","CPFCGC"},null,null,null,null,"COD_CLIENTE");
                                     //listadepessoas = new ArrayList<Pessoa>();
                                     boolean proximo = true;
 
@@ -82,11 +82,11 @@ public class Main3Activity extends AppCompatActivity {
                                     {
                                         while (proximo)
                                         {
-                                            Pessoa pessoa = new Pessoa();
-                                            pessoa.setCodigo(c.getInt(0));
-                                            pessoa.setNome(c.getString(1));
-                                            pessoa.setCpf(c.getString(2));
-                                            listadepessoas.add(pessoa);
+                                            Pessoa people = new Pessoa();
+                                            people.setCodigo(c.getInt(0));
+                                            people.setNome(c.getString(1));
+                                            people.setCpf(c.getString(2));
+                                            listadepessoas.add(people);
                                             proximo=c.moveToNext();
                                         }
                                     }
@@ -107,7 +107,7 @@ public class Main3Activity extends AppCompatActivity {
                             //mprogressDialog.setMessage("Erro: "+e.toString());
                             mprogressDialog.dismiss();
                             erro = e.toString();
-                            handler.post(new Runnable() {
+                            hand.post(new Runnable() {
                                 public void run() {
                                     //Toast.makeText(produtos.this, "ERRO "+erro.toString(), Toast.LENGTH_SHORT).show();
                                     //mensagem("ERRO", erro);
