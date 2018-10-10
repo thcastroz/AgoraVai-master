@@ -54,6 +54,7 @@ public class Main3Activity extends AppCompatActivity {
                 ContentValues values = new ContentValues();
                 values.put("COD_CLIENTE", idcliente);
                 values.put("NOME", "Teste - "+idcliente);
+                values.put("CIDADE", "ROÇA"+idcliente);
                 values.put("CPFCGC", "02722414660/"+idcliente);
                 long newRowId;
                 newRowId = db.insert("CLIENTES",null,values);
@@ -74,7 +75,7 @@ public class Main3Activity extends AppCompatActivity {
                                 public void run() {
                                     FeedReaderDbHelper mDbHelper = new FeedReaderDbHelper(getBaseContext());
                                     SQLiteDatabase db = mDbHelper.getWritableDatabase();
-                                    Cursor c = db.query("CLIENTES",new String[]{"COD_CLIENTE","NOME","CPFCGC"},null,null,null,null,"COD_CLIENTE");
+                                    Cursor c = db.query("CLIENTES",new String[]{"COD_CLIENTE","NOME","CPFCGC","CIDADE"},null,null,null,null,"COD_CLIENTE");
                                     //listadepessoas = new ArrayList<Pessoa>();
                                     boolean proximo = true;
 
@@ -86,6 +87,7 @@ public class Main3Activity extends AppCompatActivity {
                                             people.setCodigo(c.getInt(0));
                                             people.setNome(c.getString(1));
                                             people.setCpf(c.getString(2));
+                                            people.setCidade(c.getString(3));
                                             listadepessoas.add(people);
                                             proximo=c.moveToNext();
                                         }

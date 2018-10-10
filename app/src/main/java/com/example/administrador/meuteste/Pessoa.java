@@ -12,9 +12,15 @@ public class Pessoa implements Serializable {
      * POJO
      */
     private static final long serialVersionUID = 1L;
+    private String cidade;
     private String nome;
     private String cpf;
     private int codigo;
+
+    public String getCidade() { return cidade;}
+
+    public void setCidade(String cidade) {this.cidade = cidade; }
+
 
     public String getNome() {
         return nome;
@@ -44,5 +50,6 @@ public class Pessoa implements Serializable {
     public String toString() {
         return  nome;
     }
+    
 
 }

@@ -11,13 +11,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class FeedReaderDbHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 3;
-    public static final String DATABASE_NAME = "meuteste.db";
+    public static final String DATABASE_NAME = "meuteste2.db";
     public FeedReaderDbHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS CLIENTES(COD_CLIENTE INTEGER,NOME TEXT,CPFCGC TEXT, PRIMARY KEY (COD_CLIENTE))");
+        db.execSQL("CREATE TABLE IF NOT EXISTS CLIENTES(COD_CLIENTE INTEGER,NOME TEXT,CPFCGC TEXT,CIDADE TEXT, PRIMARY KEY (COD_CLIENTE))");
     }
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 // This database is only a cache for online data, so its upgrade policy is
