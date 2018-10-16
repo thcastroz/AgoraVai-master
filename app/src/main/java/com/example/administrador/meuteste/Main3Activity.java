@@ -2,6 +2,7 @@ package com.example.administrador.meuteste;
 
 import android.app.ProgressDialog;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.R.attr.id;
+import static android.R.attr.state_active;
 import static android.R.attr.value;
 
 public class Main3Activity extends AppCompatActivity {
@@ -42,22 +44,9 @@ public class Main3Activity extends AppCompatActivity {
         btinsericl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FeedReaderDbHelper mDbHelper = new FeedReaderDbHelper(getBaseContext());
-                SQLiteDatabase db = mDbHelper.getWritableDatabase();
-                Cursor c = db.rawQuery("select max(cod_cliente) from clientes",null);
-                int idcliente=0;
-                if (c.moveToFirst())
-                {
-                    idcliente=c.getInt(0);
-                }
-                idcliente+=1;
-                ContentValues values = new ContentValues();
-                values.put("COD_CLIENTE", idcliente);
-                values.put("NOME", "Teste - "+idcliente);
-                values.put("CPFCGC", "02722414660/"+idcliente);
-                long newRowId;
-                newRowId = db.insert("CLIENTES",null,values);
-            }
+                Intent intent = new Intent(Main3Activity.this, Main5Activity.class);
+                startActivity(intent);
+                            }
         });
         btListcl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,7 +116,9 @@ public class Main3Activity extends AppCompatActivity {
         btvoltarcl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(Main3Activity.this, MainActivity.class);
+                startActivity(intent);
+                ;
             }
         });
     }

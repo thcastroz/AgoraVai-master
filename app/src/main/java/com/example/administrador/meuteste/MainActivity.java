@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-// teste
+
 public class MainActivity extends AppCompatActivity {
 int valor;
     @Override
@@ -25,7 +25,7 @@ int valor;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Programe o botão flutuante", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -33,7 +33,7 @@ int valor;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+       
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -58,13 +58,14 @@ int valor;
             Intent intent = new Intent(MainActivity.this, Main2Activity.class);
             intent.putExtra("PARTESTE", "com");
             startActivityForResult(intent, 1);
-            //return true;
+
         }
 
         if (id == R.id.action_bd) {
             Intent intent = new Intent(MainActivity.this, Main3Activity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
-            //return true;
+
         }
 
 

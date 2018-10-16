@@ -52,15 +52,7 @@ public class Main2Activity extends AppCompatActivity {
         btvoltar = (Button)findViewById(R.id.btvoltar);
         listaclientes = (ListView) findViewById(R.id.listadecliente);
         btpesq = (Button)findViewById(R.id.btpesq);
-//
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         btvoltar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,8 +87,8 @@ public class Main2Activity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            dialog = ProgressDialog.show(Main2Activity.this, "Aguarde",
-                    "Fazendo download do JSON");
+            dialog = ProgressDialog.show(Main2Activity.this, "Aguarde um momento",
+                    "Estamos realizando o download do JSON");
         }
 
         //Acessa o serviço do JSON e retorna a lista de pessoas

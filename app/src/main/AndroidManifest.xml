@@ -37,7 +37,10 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Main4Activity"
-            android:label="@string/title_activity_main4"></activity>
+            android:label="@string/title_activity_main4" />
+        <activity
+            android:name=".Main5Activity"
+            android:label="@string/title_activity_main5"></activity>
     </application>
 
 </manifest>
