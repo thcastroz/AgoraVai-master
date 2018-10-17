@@ -40,7 +40,10 @@
             android:label="@string/title_activity_main4" />
         <activity
             android:name=".Main5Activity"
-            android:label="@string/title_activity_main5"></activity>
+            android:label="@string/title_activity_main5" />
+        <activity
+            android:name=".Adicionar"
+            android:label="@string/title_activity_adicionar"></activity>
     </application>
 
 </manifest>

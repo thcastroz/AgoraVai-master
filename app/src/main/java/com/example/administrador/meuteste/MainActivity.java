@@ -62,7 +62,7 @@ int valor;
         }
 
         if (id == R.id.action_bd) {
-            Intent intent = new Intent(MainActivity.this, Main3Activity.class);
+            Intent intent = new Intent(MainActivity.this, Adicionar.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
 
