@@ -1,26 +1,15 @@
 package com.example.administrador.meuteste;
-
 import java.io.Serializable;
 
-/**
- * Created by Administrador on 28/08/2017.
- */
 
 public class Pessoa implements Serializable {
 
-    /**
-     * POJO
-     */
-    private static final long serialVersionUID = 1L;
-    private String cidade;
+
     private String nome;
     private String cpf;
+    private String idade;
+    private String cidade;
     private int codigo;
-
-    public String getCidade() { return cidade;}
-
-    public void setCidade(String cidade) {this.cidade = cidade; }
-
 
     public String getNome() {
         return nome;
@@ -38,6 +27,13 @@ public class Pessoa implements Serializable {
         this.cpf = cpf;
     }
 
+    public String getIdade() {return idade;}
+
+    public void setIdade (String idade) {this.idade = idade;}
+
+    public String getCidade() {return cidade;}
+    public void setCidade (String cidade) {this.cidade = cidade;}
+
     public void setCodigo(int codigo){
         this.codigo=codigo;
     }
@@ -50,6 +46,5 @@ public class Pessoa implements Serializable {
     public String toString() {
         return  nome;
     }
-    
 
 }

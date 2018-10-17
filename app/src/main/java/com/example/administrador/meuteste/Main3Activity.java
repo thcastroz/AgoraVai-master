@@ -2,6 +2,7 @@ package com.example.administrador.meuteste;
 
 import android.app.ProgressDialog;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.R.attr.id;
+import static android.R.attr.state_active;
 import static android.R.attr.value;
 
 public class Main3Activity extends AppCompatActivity {
@@ -42,23 +44,9 @@ public class Main3Activity extends AppCompatActivity {
         btinsericl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FeedReaderDbHelper mDbHelper = new FeedReaderDbHelper(getBaseContext());
-                SQLiteDatabase db = mDbHelper.getWritableDatabase();
-                Cursor c = db.rawQuery("select max(cod_cliente) from clientes",null);
-                int idcliente=0;
-                if (c.moveToFirst())
-                {
-                    idcliente=c.getInt(0);
-                }
-                idcliente+=1;
-                ContentValues values = new ContentValues();
-                values.put("COD_CLIENTE", idcliente);
-                values.put("NOME", "Teste - "+idcliente);
-                values.put("CIDADE", "ROÇA"+idcliente);
-                values.put("CPFCGC", "02722414660/"+idcliente);
-                long newRowId;
-                newRowId = db.insert("CLIENTES",null,values);
-            }
+                Intent intent = new Intent(Main3Activity.this, Main5Activity.class);
+                startActivity(intent);
+                            }
         });
         btListcl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,7 +63,7 @@ public class Main3Activity extends AppCompatActivity {
                                 public void run() {
                                     FeedReaderDbHelper mDbHelper = new FeedReaderDbHelper(getBaseContext());
                                     SQLiteDatabase db = mDbHelper.getWritableDatabase();
-                                    Cursor c = db.query("CLIENTES",new String[]{"COD_CLIENTE","NOME","CPFCGC","CIDADE"},null,null,null,null,"COD_CLIENTE");
+                                    Cursor c = db.query("CLIENTES",new String[]{"COD_CLIENTE","NOME","CPFCGC"},null,null,null,null,"COD_CLIENTE");
                                     //listadepessoas = new ArrayList<Pessoa>();
                                     boolean proximo = true;
 
@@ -87,7 +75,6 @@ public class Main3Activity extends AppCompatActivity {
                                             people.setCodigo(c.getInt(0));
                                             people.setNome(c.getString(1));
                                             people.setCpf(c.getString(2));
-                                            people.setCidade(c.getString(3));
                                             listadepessoas.add(people);
                                             proximo=c.moveToNext();
                                         }
@@ -129,7 +116,9 @@ public class Main3Activity extends AppCompatActivity {
         btvoltarcl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent intent = new Intent(Main3Activity.this, MainActivity.class);
+                startActivity(intent);
+                ;
             }
         });
     }
